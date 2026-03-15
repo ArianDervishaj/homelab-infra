@@ -31,3 +31,24 @@ variable "template_id" {
   type        = number
   default     = 9000
 }
+
+variable "vm_map" {
+  description = "Map of VMs to create. Key is the VM name, value overrides module defaults."
+  type = map(object({
+    ip_address = string
+    cores      = optional(number)
+    memory     = optional(number)
+    disk_size  = optional(number)
+    bridge     = optional(string)
+    tags       = optional(list(string))
+    started    = optional(bool)
+    hostpci_devices = optional(list(object({
+      device  = string
+      id      = optional(string)
+      mapping = optional(string)
+      pcie    = optional(bool)
+      rombar  = optional(bool)
+      xvga    = optional(bool)
+    })))
+  }))
+}

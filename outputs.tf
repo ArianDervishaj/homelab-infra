@@ -1,7 +1,11 @@
-output "monitoring_ip" {
-  value = proxmox_virtual_environment_vm.monitoring.ipv4_addresses[1][0]
+# outputs.tf
+
+output "vm_ips" {
+  description = "Map of VM names to their configured static IPs"
+  value       = { for name, vm in module.vm : name => vm.ip_address }
 }
 
-output "monitoring_vm_id" {
-  value = proxmox_virtual_environment_vm.monitoring.vm_id
+output "vm_ids" {
+  description = "Map of VM names to their Proxmox VM IDs"
+  value       = { for name, vm in module.vm : name => vm.vm_id }
 }
