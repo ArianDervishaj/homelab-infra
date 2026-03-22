@@ -14,6 +14,7 @@ resource "proxmox_virtual_environment_vm" "this" {
   node_name = var.node_name
   tags      = var.tags
   started   = var.started
+  pool_id   = var.pool_id
 
   scsi_hardware = "virtio-scsi-single"
 
@@ -43,7 +44,7 @@ resource "proxmox_virtual_environment_vm" "this" {
     content {
       device  = hostpci.value.device
       id      = hostpci.value.id
-      mapping = hostpci.value.mapping 
+      mapping = hostpci.value.mapping
       pcie    = hostpci.value.pcie != null ? hostpci.value.pcie : false
       rombar  = hostpci.value.rombar != null ? hostpci.value.rombar : true
       xvga    = hostpci.value.xvga != null ? hostpci.value.xvga : false

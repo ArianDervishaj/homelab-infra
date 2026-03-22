@@ -42,6 +42,7 @@ variable "vm_map" {
     bridge     = optional(string)
     tags       = optional(list(string))
     started    = optional(bool)
+    pool_id    = optional(string)
     hostpci_devices = optional(list(object({
       device  = string
       id      = optional(string)

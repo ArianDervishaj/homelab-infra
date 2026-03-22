@@ -36,7 +36,8 @@ module "vm" {
   gateway            = local.gateway
   dns_servers        = local.dns_servers
   cloud_init_file_id = proxmox_virtual_environment_file.cloud_init[each.key].id
-
+  pool_id = each.value.pool_id != null ? each.value.pool_id : null
+  
   # Override module defaults only when the map entry specifies a value
   cpu_cores = each.value.cores != null ? each.value.cores : 2
   memory    = each.value.memory != null ? each.value.memory : 2048

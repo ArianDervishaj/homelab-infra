@@ -94,3 +94,8 @@ variable "hostpci_devices" {
   }))
   default = []
 }
+
+variable "pool_id" {
+  type    = string
+  default = null
+}
