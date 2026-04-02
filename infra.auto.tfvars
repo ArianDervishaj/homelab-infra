@@ -19,7 +19,7 @@ vm_map = {
         mapping = "igpu"
       }
     ]
-    pool_id    = "Homelab"
+    pool_id = "Homelab"
   }
 
   "arr" = {
@@ -45,6 +45,15 @@ vm_map = {
   "library" = {
     ip_address = "192.168.100.15/24"
     tags       = ["terraform", "media"]
+    pool_id    = "Homelab"
+  }
+
+  "wazuh" = {
+    ip_address = "192.168.100.16/24"
+    cores      = 4
+    memory     = 8192
+    disk_size  = 50
+    tags       = ["terraform", "security"]
     pool_id    = "Homelab"
   }
 }
