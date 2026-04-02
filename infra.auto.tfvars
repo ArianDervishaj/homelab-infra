@@ -5,6 +5,7 @@ vm_map = {
     ip_address = "192.168.100.10/24"
     cores      = 1
     tags       = ["terraform", "proxy"]
+    pool_id    = "Homelab"
   }
 
   "streaming" = {
@@ -18,18 +19,21 @@ vm_map = {
         mapping = "igpu"
       }
     ]
+    pool_id    = "Homelab"
   }
 
   "arr" = {
     ip_address = "192.168.100.12/24"
     memory     = 3072
     tags       = ["terraform", "media"]
+    pool_id    = "Homelab"
   }
 
   "downloader" = {
     ip_address = "192.168.100.13/24"
     memory     = 4096
     tags       = ["terraform", "media"]
+    pool_id    = "Homelab"
   }
 
   "monitoring" = {
