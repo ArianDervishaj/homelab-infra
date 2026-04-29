@@ -73,4 +73,8 @@ resource "proxmox_virtual_environment_vm" "this" {
       servers = var.dns_servers
     }
   }
+
+  lifecycle {
+    ignore_changes = [pool_id]
+  }
 }
