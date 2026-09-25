@@ -48,12 +48,12 @@ vm_map = {
     pool_id    = "Homelab"
   }
 
-  "wazuh" = {
+  "onlyoffice" = {
     ip_address = "192.168.100.16/24"
-    cores      = 4
-    memory     = 8192
-    disk_size  = 50
-    tags       = ["terraform", "security"]
+    cores      = 2
+    memory     = 4096
+    disk_size  = 32
+    tags       = ["terraform", "document"]
     pool_id    = "Homelab"
   }
 }
